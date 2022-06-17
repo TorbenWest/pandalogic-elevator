@@ -1,0 +1,13 @@
+name: Elevator
+version: '${project.version}'
+main: de.pandalogic.elevator.ElevatorPlugin
+api-version: 1.18
+authors: [ Pandalogik ]
+softdepend: [ Multiverse-Core ]
+load: POSTWORLD
+
+commands:
+  elevator:
+    description: Handles all elevator functions.
+    usage: /elevator <option>
+    aliases: [ lift, aufzug, fahrstuhl, el ]

@@ -1,0 +1,10 @@
+# This plugin let you create your own elevator with dynamic creations.
+
+# Database properties
+mysql:
+  execute_schema: true
+  username: root
+  password: password
+  database: localhost
+  host: localhost
+  port: 3306
