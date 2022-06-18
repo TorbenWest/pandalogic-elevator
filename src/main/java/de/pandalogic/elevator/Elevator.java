@@ -2,6 +2,7 @@ package de.pandalogic.elevator;
 
 import de.pandalogic.elevator.database.ElevatorFloorDTO;
 import de.pandalogic.elevator.database.ElevatorSettingsDTO;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
@@ -48,4 +49,5 @@ public interface Elevator {
 
     void onPlayerQuit(Player player);
 
+    World getWorld();
 }

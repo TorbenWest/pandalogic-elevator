@@ -58,23 +58,25 @@ public class PLFloor implements Floor {
 
     @Override
     public void close(List<Player> passengers) {
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            for (Location location : this.entrance) {
-                if (player.getLocation().distance(location) < 2) {
-                    BlockFace currentBlockFace = this.getOutputDirection();
+        Bukkit.getOnlinePlayers().stream()
+                .filter(p -> p.getWorld().equals(this.elevator.getWorld()))
+                .forEach(p -> {
+                    for (Location location : this.entrance) {
+                        if (p.getLocation().distance(location) < 2) {
+                            BlockFace currentBlockFace = this.getOutputDirection();
 
-                    if (passengers.contains(player)) {
-                        currentBlockFace = this.getOutputDirection().getOppositeFace();
+                            if (passengers.contains(p)) {
+                                currentBlockFace = this.getOutputDirection().getOppositeFace();
+                            }
+
+                            Vector vector = new Vector(currentBlockFace.getModX(),
+                                    currentBlockFace.getModY(),
+                                    currentBlockFace.getModZ())
+                                    .multiply(1.5);
+                            p.setVelocity(vector);
+                        }
                     }
-
-                    Vector vector = new Vector(currentBlockFace.getModX(),
-                            currentBlockFace.getModY(),
-                            currentBlockFace.getModZ())
-                            .multiply(1.5);
-                    player.setVelocity(vector);
-                }
-            }
-        }
+                });
 
         this.entrance.forEach(e -> e.getBlock().setType(Material.IRON_BARS));
         this.isOpen = false;

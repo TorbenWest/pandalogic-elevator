@@ -130,8 +130,10 @@ public class PLElevator implements Elevator {
         this.floors.add(floor);
         this.currentFloor = this.getFloorByY(this.movement.currentY);
 
-        if (this.currentFloor != null) {
+        if (this.currentFloor.equals(floor)) {
             this.currentFloor.open();
+        } else {
+            this.currentFloor.close(this.movement.passengers);
         }
 
         ElevatorInventory.deleteInventory(this.getId());
@@ -278,6 +280,11 @@ public class PLElevator implements Elevator {
     @Override
     public void onPlayerQuit(Player player) {
         this.movement.passengers.removeIf(p -> p.getUniqueId().equals(player.getUniqueId()));
+    }
+
+    @Override
+    public World getWorld() {
+        return Bukkit.getWorld(this.elevatorDTO.getWorldName());
     }
 
     private boolean isElevatorTooHeavy() {
