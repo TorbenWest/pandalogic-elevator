@@ -1,4 +1,4 @@
-# Elevator[![Java CI with Maven](https://github.com/TorbenWest/pandalogic-elevator/actions/workflows/maven.yml/badge.svg)](https://github.com/TorbenWest/pandalogic-elevator/actions/workflows/maven.yml)
+# Elevator [![Java CI with Maven](https://github.com/TorbenWest/pandalogic-elevator/actions/workflows/maven.yml/badge.svg)](https://github.com/TorbenWest/pandalogic-elevator/actions/workflows/maven.yml)
 
 This plugin gives you the opportunity to dynamically create elevators in your worlds.
 
@@ -71,14 +71,3 @@ your elevator. The **setting** and **value** argument specifies which setting sh
 | max_player            | The maximum amount of player, allowed in this elevator. If more players are in the elevator, the elevator will wait until a player is leaving it. | 5 Players |
 | next_stop_check       | When the elevator stops at a floor, this will be the delay until the elevator will automatically check for a new call, if it's not already moving again. | 60 Ticks |
 | player_position_check | When the elevator is moving it can happen, for example, due to server lags or a high ping from the player, that a player will glitch out of the elevator car. Therefore, the elevator automatically checks in an interval of this ticks, if this happened and if so the player will be teleported back into the elevator car. | 5 Ticks |
-
-## Future
-For the future three more features or adaptions are planned. First, the player should get the possibility to define a 
-custom gate for an elevator. Because right now, it is by default _iron bars_. This should be down via the setting command. <br>
-
-Second, different speed for up and down. Right now, only one speed can be defined which is for both, the speed up and down.
-This will be separated. <br>
-
-Finally, the smooth moving of the elevator. The elevator is moving block for block. This looks a bit rough and is a bit
-inconvenient for the players, especially when moving up. Therefore, the blocks will be replaced with falling blocks. Thus, the 
-blocks are moving smooth and the player will be moved by the plugin.
