@@ -27,7 +27,7 @@ This command deletes a registered elevator. To do so, you have to provide the co
 
 This command creates a floor for an existing elevator. The first argument will be the **elevator id**, which you receive
 either after creating the elevator or by the _/elevator identify_ command. The **floor number** is your floor number. Here,
- only integers are allowed. That means, you cannot use for example _EG_, _U1_, etc. Use _0_ or _-1_ instead. <br>
+ only integers are allowed. That means, you cannot use for example _EG_, _G_, _L_, _U1_ etc. Use _0_ or _-1_ instead. <br>
 The **base y** is the height you are standing on. In other words, the height where the elevator car will stop tho you
 can go inside or outside without jumping. <br>
 **BX** means **ButtonX**, each floor will have a button to call the elevator. Here, you have to specify the coordinates
