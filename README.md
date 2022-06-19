@@ -1,4 +1,4 @@
-# Elevator[![Java CI with Maven](https://github.com/TorbenWest/pandalogic-elevator/actions/workflows/maven.yml/badge.svg)](https://github.com/TorbenWest/pandalogic-elevator/actions/workflows/maven.yml)
+# Elevator [![Java CI with Maven](https://github.com/TorbenWest/pandalogic-elevator/actions/workflows/maven.yml/badge.svg)](https://github.com/TorbenWest/pandalogic-elevator/actions/workflows/maven.yml)
 
 This plugin gives you the opportunity to dynamically create elevators in your worlds.
 
@@ -39,9 +39,9 @@ direction is the direction when you are in the elevator, and you look to the flo
 soon as the elevator closes the floor, the player which are in the floor will be pushed in- or outside the elevator.
 
 ### /elevator copyFloor \<ElevatorId> \<CopyFloorNumber> \<FloorNumber> \<Difference>
-If you have multiple floors for one elevator, where only the **y-coordinate** changes, you can use this command save 
+If you have multiple floors for one elevator, where only the **y-coordinate** changes, you can use this command to save 
 time. The **elevator id** is again to define your elevator. When using this command, you need to define from 
-which floor you want to copy. This floor needs to be registered. Then you can enter the new floor number. This means, 
+which floor you want to copy. This floor needs to be already registered. Then you can enter the new floor number. This means, 
 **copy floor number** is the floor number you copy from and **floor number** is the floor number for your new floor. <br>
 The **difference** will be measured in blocks. You can enter a positive or negative integer, this depends on the 
 location of your new floor. If the new floor should be above your floor use a positive integer, otherwise a negative. 
