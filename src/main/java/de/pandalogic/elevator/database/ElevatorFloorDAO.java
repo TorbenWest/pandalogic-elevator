@@ -87,7 +87,7 @@ public class ElevatorFloorDAO {
         try {
             PreparedStatement statement = DatabaseUtil.getStatement(qry);
             statement.setObject(1, elevatorId);
-            statement.setObject(1, floorNumber);
+            statement.setObject(2, floorNumber);
             statement.execute();
         } catch (SQLException e) {
             e.printStackTrace();

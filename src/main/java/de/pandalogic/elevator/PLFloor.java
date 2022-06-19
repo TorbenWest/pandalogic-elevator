@@ -3,6 +3,7 @@ package de.pandalogic.elevator;
 import de.pandalogic.elevator.database.ElevatorFloorDTO;
 import de.pandalogic.elevator.events.ElevatorGateCloseEvent;
 import de.pandalogic.elevator.events.ElevatorGateOpenEvent;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -20,6 +21,12 @@ public class PLFloor implements Floor {
     private final Location button;
     private final Elevator elevator;
 
+    @Getter
+    private final Location gateBottomLeft;
+
+    @Getter
+    private final Location gateTopRight;
+
     private boolean isOpen;
 
     public PLFloor(ElevatorFloorDTO floorEntity, String world, Elevator elevator) {
@@ -29,6 +36,11 @@ public class PLFloor implements Floor {
         this.isOpen = false;
         this.button = new Location(Bukkit.getWorld(world), floorEntity.getButtonX(),
                 floorEntity.getButtonY(), floorEntity.getButtonZ());
+
+        this.gateBottomLeft = new Location(Bukkit.getWorld(world), floorEntity.getGateBottomLeftX(),
+                floorEntity.getGateBottomLeftY(), floorEntity.getGateBottomLeftZ());
+        this.gateTopRight = new Location(Bukkit.getWorld(world), floorEntity.getGateTopRightX(),
+                floorEntity.getGateTopRightY(), floorEntity.getGateTopRightZ());
     }
 
     @Override

@@ -32,8 +32,9 @@ public class ElevatorHelpCommand extends SubCommand {
     public void perform(Player player, String[] args) {
         player.sendMessage(translate(ElevatorPlugin.PREFIX + "&8--- &6Elevator System by &4Pandalogic &8---"));
         player.sendMessage(translate("&7- &a/elevator create"));
-        player.sendMessage(translate("&7- &a/elevator createFloor"));
         player.sendMessage(translate("&7- &a/elevator delete"));
+        player.sendMessage(translate("&7- &a/elevator createFloor"));
+        player.sendMessage(translate("&7- &a/elevator copyFloor"));
         player.sendMessage(translate("&7- &a/elevator deleteFloor"));
         player.sendMessage(translate("&7- &a/elevator identify"));
         player.sendMessage(translate("&7- &a/elevator info"));
