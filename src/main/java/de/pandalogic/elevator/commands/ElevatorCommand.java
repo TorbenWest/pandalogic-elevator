@@ -24,6 +24,7 @@ public class ElevatorCommand implements PlayerCommandExecutor {
         this.subCommands.add(new ElevatorInfoCommand());
         this.subCommands.add(new ElevatorInventoryCommand());
         this.subCommands.add(new ElevatorSettingsCommand());
+        this.subCommands.add(new ElevatorCopyFloorCommand());
     }
 
     @Override
@@ -50,7 +51,7 @@ public class ElevatorCommand implements PlayerCommandExecutor {
             }
         }
 
-        player.performCommand("/elevator help");
+        player.performCommand("elevator help");
     }
 
 }

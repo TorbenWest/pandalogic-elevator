@@ -14,6 +14,10 @@ public interface Floor extends Comparable<Floor> {
 
     Location getButton();
 
+    Location getGateBottomLeft();
+
+    Location getGateTopRight();
+
     List<Location> getEntrance();
 
     int getY();

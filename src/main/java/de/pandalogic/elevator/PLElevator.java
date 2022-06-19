@@ -130,10 +130,10 @@ public class PLElevator implements Elevator {
         this.floors.add(floor);
         this.currentFloor = this.getFloorByY(this.movement.currentY);
 
-        if (this.currentFloor.equals(floor)) {
+        if (this.currentFloor != null && this.currentFloor.equals(floor)) {
             this.currentFloor.open();
         } else {
-            this.currentFloor.close(this.movement.passengers);
+            floor.close(this.movement.passengers);
         }
 
         ElevatorInventory.deleteInventory(this.getId());
@@ -147,7 +147,7 @@ public class PLElevator implements Elevator {
 
         this.nextStops.removeIf(f -> f.getNumber() == floorNumber);
 
-        if (this.targetFloor.getNumber() == floorNumber) {
+        if (this.targetFloor != null && this.targetFloor.getNumber() == floorNumber) {
             this.targetFloor = this.nextStops.pop();
         }
 
